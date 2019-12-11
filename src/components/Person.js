@@ -3,10 +3,12 @@ import './Person.css'
 
 const person = (props) => {
     return (
-        <div className="Person" onClick={props.clickHandler}>
+        <div className="Person">
             {props.name}
             <br />
             {props.age}
+            <br/>
+            <input type="text" onChange={props.handleChange} value={props.name}/>
         </div>
     );
 };

@@ -12,6 +12,13 @@ state = {
   ]
 };
 
+handleInput = (event,index) => {
+ console.log('Woooo');
+ var temp = [...this.state.person]
+  temp[index].name=event.target.value;
+  this.setState({person:temp});
+}
+
 changePersonHandler = () =>{
   this.setState({person : [
     {name: 'Jatin123', age: '23'},
@@ -23,7 +30,7 @@ changePersonHandler = () =>{
   render() {
     return (
       <div className="App">
-       <PersonList personList={this.state.person} clickHandler={this.changePersonHandler} />
+       <PersonList personList={this.state.person} inputHandle={this.handleInput} />
       </div>
     );
   }

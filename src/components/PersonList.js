@@ -3,12 +3,13 @@ import Person from './Person'
 
 const personList = (props) => {
 
-const person = props.personList.map(p => (
+const person = props.personList.map((p,index) => (
     <Person
-    key={p.name} 
+    key={index} 
     name={p.name} 
     age={p.age} 
-    clickHandler={props.clickHandler} />
+    handleChange={event => props.inputHandle(event,index)}
+    />
 ));
 
         return (
